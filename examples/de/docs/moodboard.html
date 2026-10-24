@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moodboard · Anfrageboard (Beispiel)</title>
+<style>
+  :root {
+    --ink: #1D2433; --muted: #5B6475; --line: #E3E6EC; --paper: #FFFFFF; --wash: #F6F7F9;
+    --accent: #2F6FED; --open: #B7791F; --open-bg: #FFF6E5; --doing: #2F6FED; --doing-bg: #EAF1FE;
+    --done: #2E8B57; --done-bg: #E9F6EF;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Inter", "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--wash); }
+  main { max-width: 1120px; margin: 0 auto; padding: 40px 32px 56px; }
+  header { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+  h1 { font-size: 30px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 6px 0 0; font-size: 15px; }
+  .words { display: flex; gap: 8px; flex-wrap: wrap; }
+  .word { padding: 6px 12px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); font-size: 14px; }
+  .word.not { text-decoration: line-through; color: var(--muted); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 32px 0 12px; font-weight: 600; }
+  .grid { display: grid; gap: 16px; }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g2 { grid-template-columns: 1.2fr 1fr; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .swatch { height: 64px; border-radius: 8px; margin-bottom: 10px; }
+  .hex { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: var(--muted); }
+  .type-a { font-size: 28px; font-weight: 600; margin: 0 0 6px; }
+  .type-b { font-size: 16px; line-height: 1.55; margin: 0; color: var(--ink); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px; }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; font-size: 13px; font-weight: 600; }
+  .pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .open { color: var(--open); background: var(--open-bg); }
+  .doing { color: var(--doing); background: var(--doing-bg); }
+  .done { color: var(--done); background: var(--done-bg); }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .row:last-child { border-bottom: 0; }
+  .empty { text-align: center; color: var(--muted); padding: 22px 8px; font-size: 14px; border: 1px dashed var(--line); border-radius: 10px; }
+  .ref { display: flex; flex-direction: column; gap: 8px; }
+  .ref .thumb { height: 92px; border-radius: 8px; background: var(--wash); border: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); font-size: 12px; }
+  .ref a { color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
+  .ref p, .rule p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .rule b { display: block; font-size: 15px; margin-bottom: 4px; color: var(--ink); }
+  footer { margin-top: 36px; font-size: 12px; color: var(--muted); }
+  @media (max-width: 860px) { .g4, .g3, .g2 { grid-template-columns: 1fr; } header { display: block; } .words { margin-top: 14px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Anfrageboard · Moodboard</h1>
+      <p class="sub">Wie soll sich das Produkt anfühlen? Diese Seite ist die Gestaltungsvorgabe für Mensch und Agent.</p>
+    </div>
+    <div class="words" aria-label="Wirkungsbegriffe">
+      <span class="word">ruhig</span><span class="word">klar</span><span class="word">verlässlich</span><span class="word not">verspielt</span>
+    </div>
+  </header>
+
+  <h2>Farben</h2>
+  <div class="grid g4">
+    <div class="card"><div class="swatch" style="background:#1D2433"></div><b>Text</b><div class="hex">#1D2433</div></div>
+    <div class="card"><div class="swatch" style="background:#F6F7F9;border:1px solid #E3E6EC"></div><b>Fläche</b><div class="hex">#F6F7F9</div></div>
+    <div class="card"><div class="swatch" style="background:#2F6FED"></div><b>Akzent, nur Hauptaktion</b><div class="hex">#2F6FED</div></div>
+    <div class="card"><div class="swatch" style="background:linear-gradient(90deg,#B7791F 0 33%,#2F6FED 33% 66%,#2E8B57 66%)"></div><b>Status</b><div class="hex">#B7791F · #2F6FED · #2E8B57</div></div>
+  </div>
+
+  <h2>Schrift</h2>
+  <div class="grid g2">
+    <div class="card"><p class="type-a">Neue Anfrage</p><p class="type-b">Eine Überschrift pro Ansicht, kurze Labels, Fließtext mit großzügiger Zeilenhöhe. Systemschrift, damit nichts nachgeladen werden muss.</p></div>
+    <div class="card"><p class="hex">Inter / Segoe UI / Arial · 28/600 · 16/400 · Labels 13/600</p><p class="type-b" style="margin-top:10px">Zahlen und Codes in Monospace: <span class="hex">#A-0142</span></p></div>
+  </div>
+
+  <h2>Komponentenproben</h2>
+  <div class="grid g3">
+    <div class="card"><span class="btn">Anfrage speichern</span><span class="btn ghost">Abbrechen</span></div>
+    <div class="card">
+      <div class="row"><span>Beamer im Raum 2 fehlt</span><span class="pill open">offen</span></div>
+      <div class="row"><span>Zugang für neue Kollegin</span><span class="pill doing">in Arbeit</span></div>
+      <div class="row"><span>Druckerpapier bestellen</span><span class="pill done">erledigt</span></div>
+    </div>
+    <div class="card"><div class="empty">Keine Anfragen mit diesem Status.<br>Neue Anfragen erscheinen hier oben.</div></div>
+  </div>
+
+  <h2>Referenzen</h2>
+  <div class="grid g3">
+    <div class="card ref"><div class="thumb">eigener Screenshot, nicht im Repo</div><a href="https://linear.app" rel="noopener">Linear · Issue-Liste</a><p>Übernehmen: dichte, ruhige Liste mit Status als kleinem Punkt. Nicht übernehmen: Tastatur-Shortcuts als Pflicht.</p></div>
+    <div class="card ref"><div class="thumb">eigener Screenshot, nicht im Repo</div><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues" rel="noopener">GitHub Issues</a><p>Übernehmen: Titel plus Status als Text. Nicht übernehmen: viele Labels und Filter auf einmal.</p></div>
+    <div class="card ref"><div class="thumb">eigene Skizze</div><a href="https://www.nngroup.com/articles/mood-boards/" rel="noopener">Nielsen Norman Group · Mood Boards</a><p>Methode: Wirkungsbegriffe festlegen, Referenzen kuratieren, in Regeln übersetzen.</p></div>
+  </div>
+
+  <h2>Drei Gestaltungsregeln</h2>
+  <div class="grid g3">
+    <div class="card rule"><b>1 · Ruhig</b><p>Helle Fläche, viel Abstand, maximal eine Schattenstufe. Keine Animation außer Fokus.</p></div>
+    <div class="card rule"><b>2 · Klar</b><p>Die Akzentfarbe gibt es nur für die Hauptaktion einer Ansicht. Alles andere ist Text oder Rahmen.</p></div>
+    <div class="card rule"><b>3 · Verlässlich</b><p>Status immer als Text plus Farbe, nie nur Farbe. Leerzustände erklären, was als Nächstes passiert.</p></div>
+  </div>
+
+  <footer><a href="https://sebmer.com" style="float:right"><img src="../../../assets/brand/sebmer-wordmark.svg" alt="Seb Builds" height="34"></a>Beispiel von Seb Builds · Beispiel aus dem AI-Coding-Repository · fiktives Produkt · Referenzen sind verlinkt, nicht kopiert.</footer>
+</main>
+</body>
+</html>

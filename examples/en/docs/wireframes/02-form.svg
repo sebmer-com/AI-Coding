@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="Arial, sans-serif">
+<rect width="960" height="600" fill="#fff"/>
+<rect x="40" y="40" width="620" height="520" rx="10" fill="#fff" stroke="#9AA1AE" stroke-width="2"/>
+<text x="64" y="92" font-size="26" fill="#1D2433">New request</text>
+<text x="64" y="140" font-size="15" fill="#1D2433" font-weight="bold">Title *</text>
+<rect x="64" y="152" width="572" height="44" rx="6" fill="#fff" stroke="#1D2433" stroke-width="2"/>
+<text x="78" y="180" font-size="15" fill="#9AA1AE">e.g. Projector missing in room 2</text>
+<text x="64" y="220" font-size="14" fill="#B42318">⚠ Please enter a title.</text>
+<text x="64" y="262" font-size="15" fill="#1D2433" font-weight="bold">Description (optional)</text>
+<rect x="64" y="274" width="572" height="150" rx="6" fill="#fff" stroke="#9AA1AE"/>
+<rect x="64" y="460" width="150" height="44" rx="6" fill="#fff" stroke="#1D2433" stroke-width="2.5"/>
+<text x="139" y="488" font-size="16" text-anchor="middle" fill="#1D2433" font-weight="bold">Save</text>
+<rect x="226" y="460" width="130" height="44" rx="6" fill="#fff" stroke="#9AA1AE"/>
+<text x="291" y="488" font-size="16" text-anchor="middle" fill="#1D2433">Cancel</text>
+<line x1="642" y1="174" x2="700" y2="174" stroke="#6F01F5" stroke-width="1.5"/>
+<circle cx="642" cy="174" r="4" fill="#6F01F5"/>
+<text x="708" y="179" font-size="15" fill="#6F01F5"><tspan x="708" dy="0">Required, max. 120</tspan><tspan x="708" dy="19">characters</tspan></text>
+<line x1="296" y1="216" x2="700" y2="216" stroke="#6F01F5" stroke-width="1.5"/>
+<circle cx="296" cy="216" r="4" fill="#6F01F5"/>
+<text x="708" y="221" font-size="15" fill="#6F01F5"><tspan x="708" dy="0">Error next to the field, as</tspan><tspan x="708" dy="19">text</tspan></text>
+<line x1="139" y1="512" x2="700" y2="532" stroke="#6F01F5" stroke-width="1.5"/>
+<circle cx="139" cy="512" r="4" fill="#6F01F5"/>
+<text x="708" y="537" font-size="15" fill="#6F01F5"><tspan x="708" dy="0">Save creates status “open”</tspan></text>
+<text x="40" y="590" font-size="13" fill="#5B6475">Wireframe 2 · Form</text></svg>

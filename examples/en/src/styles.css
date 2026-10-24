@@ -1,0 +1,23 @@
+/* Farben und Regeln aus docs/moodboard.html / colours and rules from docs/moodboard.html */
+:root { --ink: #1D2433; --muted: #5B6475; --line: #E3E6EC; --paper: #fff; --wash: #F6F7F9; --accent: #2F6FED;
+  --open: #B7791F; --open-bg: #FFF6E5; --doing: #2F6FED; --doing-bg: #EAF1FE; --done: #2E8B57; --done-bg: #E9F6EF; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--wash); }
+main { max-width: 720px; margin: 0 auto; padding: 40px 24px; display: grid; gap: 20px; }
+h1 { font-size: 28px; font-weight: 600; margin: 0; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 12px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+form { display: grid; gap: 8px; }
+label { font-size: 13px; font-weight: 600; }
+input, textarea, select { font: inherit; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; color: var(--ink); }
+input:focus, textarea:focus, select:focus, button:focus { outline: 3px solid #C9DAFB; outline-offset: 1px; }
+button { justify-self: start; margin-top: 6px; background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 10px 16px; font-weight: 600; font-size: 14px; cursor: pointer; }
+.error { color: #B42318; margin: 0; font-size: 14px; }
+ul { list-style: none; margin: 0; padding: 0; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: 0; }
+.row select { border-radius: 999px; padding: 4px 10px; font-size: 13px; font-weight: 600; border: 0; }
+.row.open select { color: var(--open); background: var(--open-bg); }
+.row.doing select { color: var(--doing); background: var(--doing-bg); }
+.row.done select { color: var(--done); background: var(--done-bg); }
+.empty { text-align: center; color: var(--muted); padding: 22px 8px; font-size: 14px; border: 1px dashed var(--line); border-radius: 10px; margin: 0; }

@@ -1,0 +1,28 @@
+%% Architektur Anfrageboard. Quelle der Wahrheit für das Diagramm; docs/architektur.md bettet denselben Text ein.
+flowchart LR
+  Nutzer((Servicekoordination))
+  subgraph Lieferkette["Lieferkette"]
+    direction TB
+    Repo["GitHub-Repository"]
+    CI["GitHub Actions<br/>Tests bei jedem Push"]
+    Host["Vercel<br/>Preview pro Branch"]
+  end
+  subgraph Browser["Browser der Nutzerin: nicht vertrauenswürdig"]
+    direction TB
+    UI["Web-Oberfläche<br/>React + Vite"]
+    Logik["requests.ts<br/>prüfen, filtern, zählen"]
+    Store[("localStorage<br/>V1, nur dieses Gerät")]
+  end
+  subgraph Server["Server: prüft jede Anfrage (ab V2)"]
+    direction TB
+    Auth["Supabase Auth<br/>Anmeldung"]
+    DB[("Postgres mit RLS<br/>nur eigene Zeilen")]
+  end
+  Auth ~~~ DB
+  Repo --> CI
+  Repo --> Host
+  Host -- "liefert App aus" --> UI
+  Nutzer --> UI
+  UI --> Logik --> Store
+  UI -. "ab V2: publishable Key" .-> Auth
+  Logik -. "ab V2: Daten nur mit RLS" .-> DB

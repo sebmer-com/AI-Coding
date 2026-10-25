@@ -17,3 +17,5 @@ Plan: PLAN.md · Requirements: docs/prd/
 - No secrets in code, no real personal data. `.env` stays in `.gitignore`.
 - New dependencies (npm packages) only after asking.
 - Report at the end: changed files, test result, open points.
+- Design: values and rules from `DESIGN.md`, no raw hex values in code.
+- Change a status in `PLAN.md` only with evidence (see "Status and gates"); never set "done" yourself.

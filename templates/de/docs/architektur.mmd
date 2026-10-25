@@ -1,0 +1,11 @@
+%% Architektur: Komponenten, Datenfluss, Vertrauensgrenzen
+flowchart LR
+  Nutzer((Nutzer))
+  subgraph Browser["Browser: nicht vertrauenswürdig"]
+    UI["Web-Oberfläche"]
+  end
+  subgraph Server["Server: prüft jede Anfrage"]
+    DB[("Datenbank")]
+  end
+  Nutzer --> UI
+  UI -. "Anfrage" .-> DB

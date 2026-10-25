@@ -17,3 +17,5 @@ Plan: PLAN.md · Anforderungen: docs/prd/
 - Keine Secrets im Code, keine echten Personendaten. `.env` bleibt in `.gitignore`.
 - Neue Abhängigkeiten (npm-Pakete) nur nach Rückfrage.
 - Melde am Ende: geänderte Dateien, Testergebnis, offene Punkte.
+- Gestaltung: Werte und Regeln aus `DESIGN.md`, keine rohen Hex-Werte im Code.
+- Status in `PLAN.md` nur mit Nachweis ändern (siehe „Status und Gates“); nie selbst auf „erledigt“ setzen.

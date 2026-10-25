@@ -29,9 +29,10 @@ Dieses Repository begleitet ein Arbeitsheft zum AI Coding. Jede Einheit des Heft
 |---|---|---|
 | Kurs 0 · Startklar | `docs/00-setup.md` | [Beispiel](examples/de/docs/00-setup.md) |
 | SLE 1 · Use Case | `docs/idee.md` | [Beispiel](examples/de/docs/idee.md) |
-| SLE 2 · Produkt | `docs/onepager.md`, `docs/moodboard.html`, `docs/wireframes/`, `docs/architektur.md` | [One-Pager](examples/de/docs/onepager.md) · [Moodboard](examples/de/docs/moodboard.html) · [Wireframes](examples/de/docs/wireframes/) · [Architektur](examples/de/docs/architektur.md) |
+| SLE 2 · Produkt | `docs/onepager.md`, `docs/moodboard.html`, `docs/wireframes/`, `docs/architektur.md` | [One-Pager](examples/de/docs/onepager.md) · [Moodboard](examples/de/docs/moodboard.html) · [Wireframes](examples/de/docs/wireframes/) · [Architektur](examples/de/docs/architektur.md) ([Mermaid-Quelle](examples/de/docs/architektur.mmd)) |
 | SLE 3 · Kontext | `PLAN.md`, `docs/prd/`, `AGENTS.md`, `CLAUDE.md`, Tests | [Plan](examples/de/PLAN.md) · [PRDs](examples/de/docs/prd/) · [AGENTS.md](examples/de/AGENTS.md) |
-| SLE 3 · Superpowers | `docs/superpowers/specs/`, `docs/superpowers/plans/` | [Spec](examples/de/docs/superpowers/specs/) · [Plan](examples/de/docs/superpowers/plans/) |
+| SLE 3 · Superpowers | `docs/superpowers/specs/`, `docs/superpowers/plans/` | [Spec](examples/de/docs/superpowers/specs/) · [Plan](examples/de/docs/superpowers/plans/) · [Status und Gates](examples/de/PLAN.md#status-und-gates) |
+| SLE 3 · Diagramme | `docs/mermaider/` (erzeugt mit [Mermaider](https://github.com/sebmer-com/mermaider)) | [Diagramme](docs/mermaider/) |
 | SLE 4 · MVP | `src/`, `tests/` | [App](examples/de/src/) · [Tests](examples/de/tests/) |
 | SLE 5–6 · Nachweise | `EVIDENCE.md` | [Beispiel](examples/de/EVIDENCE.md) |
 | alle Einheiten | Prompts | [Prompt-Sammlung](examples/de/prompts.md) |
@@ -42,9 +43,9 @@ Dieses Repository begleitet ein Arbeitsheft zum AI Coding. Jede Einheit des Heft
 cd examples/de          # oder examples/en
 npm install
 npm run dev             # http://localhost:5173
-npm test                # 7 Unit-Tests (Vitest)
+npm test                # 11 Unit-Tests (Vitest)
 npx playwright install chromium
-npm run test:e2e        # 4 Browser-Tests (Playwright)
+npm run test:e2e        # 7 Browser-Tests (Playwright)
 ```
 
 Die App speichert nur im eigenen Browser (`localStorage`). Kein Konto, kein Server, keine Secrets.

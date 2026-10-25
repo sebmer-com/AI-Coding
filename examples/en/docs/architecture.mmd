@@ -1,0 +1,28 @@
+%% Architecture of the Request board. Source of truth for the diagram; docs/architecture.md embeds the same text.
+flowchart LR
+  User((Service coordination))
+  subgraph Delivery["Delivery"]
+    direction TB
+    Repo["GitHub repository"]
+    CI["GitHub Actions<br/>tests on every push"]
+    Host["Vercel<br/>preview per branch"]
+  end
+  subgraph Browser["User's browser: untrusted"]
+    direction TB
+    UI["Web UI<br/>React + Vite"]
+    Logic["requests.ts<br/>validate, filter, count"]
+    Store[("localStorage<br/>V1, this device only")]
+  end
+  subgraph Server["Server: checks every request (from V2)"]
+    direction TB
+    Auth["Supabase Auth<br/>sign-in"]
+    DB[("Postgres with RLS<br/>own rows only")]
+  end
+  Auth ~~~ DB
+  Repo --> CI
+  Repo --> Host
+  Host -- "serves the app" --> UI
+  User --> UI
+  UI --> Logic --> Store
+  UI -. "from V2: publishable key" .-> Auth
+  Logic -. "from V2: data only with RLS" .-> DB

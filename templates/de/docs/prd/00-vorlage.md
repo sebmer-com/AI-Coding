@@ -1,17 +1,25 @@
 # PRD [NN]: [Feature]
 
-**Ziel:** [ein Satz]
+**Ziel:** [ein Satz; daran wird jede Annahme gemessen]
 
-**Verhalten:** [was passiert]
+**Nutzer und Rechte:** [wer nutzt es, wer darf was]
 
-**Nicht-Ziele:** [was ausdrücklich nicht]
+**Verhalten:** [was passiert, in beobachtbaren Sätzen]
+
+**Nicht-Ziele:** [was ausdrücklich nicht gebaut wird]
+
+**Regeln, die gelten:** [Gestaltungsregeln, Datenregeln; projektweite Regeln stehen in AGENTS.md]
+
+**Offene Fragen:** [müssen leer sein, bevor das Paket „in Arbeit“ geht]
 
 ## Akzeptanzkriterien
 
-- [ ] **Normalfall:** [beobachtbar]
+- [ ] **Normalfall:** [beobachtbar, mit echten Werten]
 - [ ] **Fehler:** [beobachtbar]
 - [ ] **Grenzfall:** [beobachtbar]
 
 ## Tests
 
-- [Datei]
+| Kriterium | Test |
+|---|---|
+| Normalfall | [Datei › Testname] |

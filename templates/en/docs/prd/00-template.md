@@ -1,17 +1,25 @@
-# PRD [NN]: [feature]
+# PRD [NN]: [Feature]
 
-**Goal:** [one sentence]
+**Goal:** [one sentence; every assumption is measured against it]
 
-**Behaviour:** [what happens]
+**Users and permissions:** [who uses it, who may do what]
 
-**Non-goals:** [explicitly out of scope]
+**Behaviour:** [what happens, in observable sentences]
+
+**Non-goals:** [what will explicitly not be built]
+
+**Rules that apply:** [design rules, data rules; project-wide rules live in AGENTS.md]
+
+**Open questions:** [must be empty before the package goes "in progress"]
 
 ## Acceptance criteria
 
-- [ ] **Normal case:** [observable]
+- [ ] **Normal case:** [observable, with real values]
 - [ ] **Error:** [observable]
 - [ ] **Edge case:** [observable]
 
 ## Tests
 
-- [file]
+| Criterion | Test |
+|---|---|
+| Normal case | [file › test name] |

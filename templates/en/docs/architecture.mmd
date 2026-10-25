@@ -1,0 +1,11 @@
+%% Architecture: components, data flow, trust boundaries
+flowchart LR
+  User((User))
+  subgraph Browser["Browser: untrusted"]
+    UI["Web UI"]
+  end
+  subgraph Server["Server: checks every request"]
+    DB[("Database")]
+  end
+  User --> UI
+  UI -. "request" .-> DB

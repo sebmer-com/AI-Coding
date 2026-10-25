@@ -47,6 +47,19 @@ export function updateStatus(list: Request[], id: string, status: Status): Reque
   return list.map((r) => (r.id === id ? { ...r, status: normalizeStatus(status) } : r));
 }
 
+export type StatusFilter = Status | 'all';
+export const FILTERS: StatusFilter[] = ['all', ...STATUSES];
+
+export function filterRequests(list: Request[], filter: StatusFilter): Request[] {
+  return filter === 'all' ? list : list.filter((r) => r.status === filter);
+}
+
+export function countByStatus(list: Request[]): Record<StatusFilter, number> {
+  const counts: Record<StatusFilter, number> = { all: list.length, open: 0, doing: 0, done: 0 };
+  for (const r of list) counts[r.status] += 1;
+  return counts;
+}
+
 export function loadRequests(store: KeyValueStore): Request[] {
   try {
     const raw = JSON.parse(store.getItem(KEY) ?? '[]');

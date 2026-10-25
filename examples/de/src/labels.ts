@@ -9,6 +9,9 @@ export const t = {
   "errLong": "Der Titel darf höchstens 120 Zeichen haben.",
   "listTitle": "Anfragen",
   "statusLabel": "Status für",
+  "filterLabel": "Nach Status filtern",
+  "filterAll": "Alle",
+  "emptyFilter": "Keine Anfragen mit diesem Status.",
   "empty": "Noch keine Anfragen. Neue Anfragen erscheinen hier oben.",
   "status": {
     "open": "offen",

@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { createRequest, loadRequests, saveRequests, updateStatus, validateTitle, STATUSES, type Request, type Status } from './lib/requests';
+import { countByStatus, createRequest, filterRequests, loadRequests, saveRequests, updateStatus, validateTitle, FILTERS, STATUSES, type Request, type Status, type StatusFilter } from './lib/requests';
 import { t } from './labels';
 
 export default function App() {
@@ -7,6 +7,9 @@ export default function App() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [filter, setFilter] = useState<StatusFilter>('all');
+  const counts = countByStatus(items);
+  const visible = filterRequests(items, filter);
 
   useEffect(() => saveRequests(items, window.localStorage), [items]);
 
@@ -37,11 +40,22 @@ export default function App() {
       </form>
       <section className="card" aria-labelledby="list-title">
         <h2 id="list-title">{t.listTitle}</h2>
+        {items.length > 0 && (
+          <div className="filters" role="group" aria-label={t.filterLabel}>
+            {FILTERS.map((f) => (
+              <button key={f} type="button" className="filter" aria-pressed={filter === f} onClick={() => setFilter(f)}>
+                {f === 'all' ? t.filterAll : t.status[f]} ({counts[f]})
+              </button>
+            ))}
+          </div>
+        )}
         {items.length === 0 ? (
           <p className="empty">{t.empty}</p>
+        ) : visible.length === 0 ? (
+          <p className="empty">{t.emptyFilter}</p>
         ) : (
           <ul data-testid="request-list">
-            {items.map((r) => (
+            {visible.map((r) => (
               <li key={r.id} className={`row ${r.status}`}>
                 <span className="title">{r.title}</span>
                 <select aria-label={`${t.statusLabel} ${r.title}`} value={r.status} onChange={(e) => setItems((list) => updateStatus(list, r.id, e.target.value as Status))}>

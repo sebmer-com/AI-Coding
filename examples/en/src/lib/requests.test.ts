@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createRequest, loadRequests, normalizeStatus, saveRequests, updateStatus, validateTitle } from './requests';
+import { countByStatus, createRequest, filterRequests, loadRequests, normalizeStatus, saveRequests, updateStatus, validateTitle } from './requests';
 
 function memoryStore() {
   const data = new Map<string, string>();
@@ -45,5 +45,30 @@ describe('status', () => {
     const store = memoryStore();
     store.setItem('requests-v1', '{not json');
     expect(loadRequests(store)).toEqual([]);
+  });
+});
+
+describe('status edge case (PRD 02)', () => {
+  it('changes only the chosen request', () => {
+    const list = createRequest(createRequest([], 'A'), 'B');
+    const changed = updateStatus(list, list[0].id, 'done');
+    expect(changed[0].status).toBe('done');
+    expect(changed[1].status).toBe('open');
+  });
+});
+
+describe('filter (PRD 03)', () => {
+  const base = createRequest(createRequest(createRequest([], 'A'), 'B'), 'C');
+  const list = updateStatus(base, base[0].id, 'doing');
+
+  it('shows only requests with the chosen status', () => {
+    expect(filterRequests(list, 'open').map((r) => r.title)).toEqual(['B', 'A']);
+    expect(filterRequests(list, 'all')).toHaveLength(3);
+  });
+  it('counts requests per status, including all', () => {
+    expect(countByStatus(list)).toEqual({ all: 3, open: 2, doing: 1, done: 0 });
+  });
+  it('returns an empty list when nothing matches', () => {
+    expect(filterRequests(list, 'done')).toEqual([]);
   });
 });

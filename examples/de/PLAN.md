@@ -12,12 +12,12 @@
 
 Ein Paket wechselt den Status nur, wenn der Nachweis der rechten Spalte vorliegt. Behauptungen ohne Ausgabe zählen nicht.
 
-| Status | Bedeutung | Gate zum nächsten Status (Nachweis) |
+| Status | Bedeutung | Gate: darf gesetzt werden, wenn dieser Nachweis vorliegt |
 |---|---|---|
-| offen | Paket ist geplant | PRD vollständig, offene Fragen leer, Abhängigkeiten erledigt |
-| in Arbeit | Agent arbeitet daran | Tests zu allen Akzeptanzkriterien geschrieben und **rot** gesehen (Ausgabe sichern) |
-| in Prüfung | Umsetzung fertig | **ganze** Testsuite grün, Diff gelesen, Kernablauf im Browser geprüft, Review ohne kritische Befunde |
-| erledigt | Paket abgeschlossen | Commit gepusht, CI grün, Zeile in `EVIDENCE.md` |
+| offen | Paket ist geplant | Paket steht im Plan, PRD ist verlinkt |
+| in Arbeit | Agent arbeitet daran | PRD vollständig, offene Fragen leer, Abhängigkeiten erledigt |
+| in Prüfung | Umsetzung fertig | Tests zu allen Akzeptanzkriterien erst **rot** gesehen (Ausgabe sichern), danach **ganze** Testsuite grün |
+| erledigt | Paket abgeschlossen | Diff gelesen, Kernablauf im Browser geprüft, Review ohne kritische Befunde, Commit gepusht, CI grün, Zeile in `EVIDENCE.md` |
 | blockiert | Issue verhindert Fortschritt | Ursache und Verantwortliche notiert (GitHub Issue oder hier); abhängige Pakete starten nicht |
 
 Diese Status sind eine Konvention dieses Kurses. Superpowers selbst führt Fortschritt über Checkboxen im Plan (`- [ ]`, `- [x]`), Todos und die Rückmeldungen DONE, DONE_WITH_CONCERNS, NEEDS_CONTEXT und BLOCKED.

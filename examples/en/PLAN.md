@@ -12,12 +12,12 @@
 
 A package changes status only when the evidence in the right-hand column exists. Claims without output do not count.
 
-| Status | Meaning | Gate to the next status (evidence) |
+| Status | Meaning | Gate: may be set when this evidence exists |
 |---|---|---|
-| open | package is planned | PRD complete, no open questions, dependencies done |
-| in progress | the agent works on it | tests for all acceptance criteria written and seen **red** (keep the output) |
-| in review | implementation finished | **whole** test suite green, diff read, core flow checked in the browser, review without critical findings |
-| done | package closed | commit pushed, CI green, row in `EVIDENCE.md` |
+| open | package is planned | package is in the plan, PRD is linked |
+| in progress | the agent works on it | PRD complete, no open questions, dependencies done |
+| in review | implementation finished | tests for all acceptance criteria first seen **red** (keep the output), then the **whole** test suite green |
+| done | package closed | diff read, core flow checked in the browser, review without critical findings, commit pushed, CI green, row in `EVIDENCE.md` |
 | blocked | an issue prevents progress | cause and owner recorded (GitHub issue or here); dependent packages do not start |
 
 These statuses are a convention of this course. Superpowers itself tracks progress with checkboxes in the plan (`- [ ]`, `- [x]`), todos and the reports DONE, DONE_WITH_CONCERNS, NEEDS_CONTEXT and BLOCKED.

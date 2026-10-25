@@ -7,12 +7,12 @@
 
 ## Status und Gates (Kurskonvention)
 
-| Status | Gate zum nächsten Status (Nachweis) |
+| Status | Gate: darf gesetzt werden, wenn dieser Nachweis vorliegt |
 |---|---|
-| offen | PRD vollständig, offene Fragen leer, Abhängigkeiten erledigt |
-| in Arbeit | Tests zu allen Akzeptanzkriterien geschrieben und rot gesehen |
-| in Prüfung | ganze Testsuite grün, Diff gelesen, Browser geprüft, Review ohne kritische Befunde |
-| erledigt | Commit gepusht, CI grün, Zeile in `EVIDENCE.md` |
+| offen | Paket steht im Plan, PRD ist verlinkt |
+| in Arbeit | PRD vollständig, offene Fragen leer, Abhängigkeiten erledigt |
+| in Prüfung | Tests zu allen Akzeptanzkriterien erst rot gesehen, danach ganze Testsuite grün |
+| erledigt | Diff gelesen, Browser geprüft, Review ohne kritische Befunde, Commit gepusht, CI grün, Zeile in `EVIDENCE.md` |
 | blockiert | Ursache und Verantwortliche notiert; abhängige Pakete starten nicht |
 
 **Stoppregel:** Nach zwei erfolglosen Korrekturversuchen hält der Loop an; Paket auf „blockiert“.

@@ -1,0 +1,25 @@
+{
+  "audience": "both",
+  "detail": "both",
+  "diagrams": [
+    {
+      "id": "ci_890683515292"
+    },
+    {
+      "id": "code:states:examples/de/src/lib/requests.ts:Status"
+    },
+    {
+      "id": "code:states:examples/en/src/lib/requests.ts:Status"
+    }
+  ],
+  "exclude": [],
+  "hooks": {
+    "enabled": true,
+    "trigger": "changes"
+  },
+  "include": [
+    "**/*"
+  ],
+  "outputDir": "docs/mermaider",
+  "version": 1
+}

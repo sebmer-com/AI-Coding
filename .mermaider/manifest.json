@@ -1,0 +1,40 @@
+{
+  "diagrams": [
+    "ci_890683515292",
+    "code:states:examples/de/src/lib/requests.ts:Status",
+    "code:states:examples/en/src/lib/requests.ts:Status"
+  ],
+  "files": [
+    {
+      "path": "docs/mermaider/ci_890683515292.md",
+      "sha256": "cfa8562734f0c84d3ae0051b4515d29c32d7bd673edba39828c325679fd798ab"
+    },
+    {
+      "path": "docs/mermaider/ci_890683515292.mmd",
+      "sha256": "c235d3461173d814bfbebc6d3e31438931c534d3084d6cf67cf31385b699686c"
+    },
+    {
+      "path": "docs/mermaider/code_states_examples_de_src_lib_requests_ts_Status.md",
+      "sha256": "f9c053f9f59bd5a3782f2dea33d5967be9b8e005d2c872637b2b26d5f2d2d86c"
+    },
+    {
+      "path": "docs/mermaider/code_states_examples_de_src_lib_requests_ts_Status.mmd",
+      "sha256": "5d2a08d17d36fa244d56f61dbf7b3870acff07134561de22fd584cf446f2ea5c"
+    },
+    {
+      "path": "docs/mermaider/code_states_examples_en_src_lib_requests_ts_Status.md",
+      "sha256": "6487a2acd6594734cc479c8f25abba855f043572b89833fceb7e67716a0c73bf"
+    },
+    {
+      "path": "docs/mermaider/code_states_examples_en_src_lib_requests_ts_Status.mmd",
+      "sha256": "eac54528c0d9ed211d980fe7af432acbac35a5b9946593b48cf2706040054c4e"
+    },
+    {
+      "path": "docs/mermaider/index.html",
+      "sha256": "2454b4bb37c5deb8ae5cba9861eb52081ca329cc578daa0aa483cdf148ba6758"
+    }
+  ],
+  "fingerprint": "81b2ac6a51e9367a4c0be35b421bfd6639bc43fa854d3a8c068772847b59d356",
+  "toolVersion": "0.1.1",
+  "version": 1
+}
